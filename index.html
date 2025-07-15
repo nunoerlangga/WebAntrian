@@ -2,17 +2,25 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <title>Antrian TTS + Navigasi Lengkap</title>
+    <title>Antrian TTS</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>🔊 Panggil Antrian SKCK</h1>
+    <a
+      href="tampilan.html"
+      target="_blank"
+      class="monitor-fixed"
+      title="Buka Tampilan Antrian"
+    >
+      <div class="monitor-box">
+        <div class="icon">🖥️</div>
+        <div class="label">Lihat Monitor</div>
+      </div>
+    </a>
 
+    <h1 style="text-align: center">🔊 Operator: Panggil Antrian</h1>
+    <br>
     <div class="angka-grid" id="angkaContainer"></div>
-
-    <div class="info">
-      Gunakan tombol panah ← ↑ ↓ → untuk berpindah antar tombol.
-    </div>
     <script src="script.js"></script>
   </body>
 </html>

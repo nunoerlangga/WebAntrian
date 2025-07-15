@@ -1,0 +1,44 @@
+body {
+  background-color: #2196f3;
+  color: white;
+  font-size: 300px;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  transition: background-color 0.5s ease;
+}
+#container {
+  width: 700px;
+  height: 700px;
+  border: 30px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+#angkaTampil {
+  animation: popIn 0.4s ease;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Efek skala + fade yang halus dan lebih terasa */
+@keyframes popIn {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
