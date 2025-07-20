@@ -1,44 +1,132 @@
+/* ======= Tampilan Umum ======= */
 body {
-  background-color: #2196f3;
-  color: white;
-  font-size: 300px;
-  font-weight: bold;
+  background-color: #7b1e1e; /* Warna khas Sat Intelkam */
+  color: #ffd700; /* Warna emas untuk teks */
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100vh;
   margin: 0;
   overflow: hidden;
+  position: relative;
   transition: background-color 0.5s ease;
 }
-#container {
-  width: 700px;
-  height: 700px;
-  border: 30px solid white;
+
+/* ======= Logo & Judul ======= */
+.img-box {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  border-radius: 100%;
-}
-#angkaTampil {
-  animation: popIn 0.4s ease;
-  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3),
-    0 0 20px rgba(255, 255, 255, 0.2);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  width: 100%;
+  max-width: 1400px;
+  padding: 20px 40px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-/* Efek skala + fade yang halus dan lebih terasa */
+.img-box img {
+  width: 180px;
+  height: auto;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+  transition: transform 0.3s ease;
+}
+
+/* Efek animasi pop untuk logo saat angka berganti */
+.logo.popIn {
+  animation: popInLogo 0.4s ease;
+}
+
+@keyframes popInLogo {
+  0% { transform: scale(0.8); opacity: 0.6; }
+  60% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+.img-box span {
+  font-size: 60px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+/* ======= Tampilan Angka ======= */
+#angkaTampil {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 340px;
+  font-weight: bold;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3),
+               0 0 20px rgba(255, 255, 255, 0.2);
+  animation: popIn 0.4s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  line-height: 1;
+  white-space: nowrap;
+}
+.subjudul {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3),
+               0 0 20px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Animasi untuk angka */
+.popIn {
+  animation: popIn 0.4s ease;
+}
+
 @keyframes popIn {
   0% {
-    transform: scale(0.7);
+    transform: translate(-50%, -50%) scale(0.7);
     opacity: 0;
   }
   60% {
-    transform: scale(1.1);
+    transform: translate(-50%, -50%) scale(1.1);
     opacity: 1;
   }
   100% {
-    transform: scale(1);
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* ======= Responsif Mobile ======= */
+@media (max-width: 768px) {
+  #angkaTampil {
+    font-size: 160px;
+  }
+
+  .img-box {
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .img-box img {
+    width: 120px;
+  }
+
+  .img-box span {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  #angkaTampil {
+    font-size: 100px;
+  }
+
+  .img-box img {
+    width: 100px;
+  }
+
+  .img-box span {
+    font-size: 28px;
   }
 }
